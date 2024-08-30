@@ -5,13 +5,13 @@ const sendmail = (email, message, subject) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "vaibhavdevaliya28@gmail.com",
+      user: process.env.EMAIL,
       pass: process.env.PASSWORD,
     },
   });
 
   var mailOptions = {
-    from: "vaibhavdevaliya28@gmail.com",
+    from: process.env.EMAIL,
     to: email,
     subject: subject,
     text: message,
